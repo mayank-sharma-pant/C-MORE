@@ -1,0 +1,208 @@
+[
+  {
+    "slug": "new-delhi",
+    "name": "New Delhi",
+    "region": "Delhi",
+    "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1600&q=80",
+    "summary": "Seven cities stacked on one plain. C More meets every inbound guest at Indira Gandhi International Airport and starts the programme among Lutyens’ avenues, Qutub Minar, Humayun’s Tomb, and the lanes of Shahjahanabad.",
+    "highlights": [
+      "India Gate and the diplomatic enclave",
+      "Qutub Minar and Humayun’s Tomb",
+      "Red Fort, Chandni Chowk, and Jama Masjid",
+      "Raj Ghat"
+    ]
+  },
+  {
+    "slug": "jaipur",
+    "name": "Jaipur",
+    "region": "Rajasthan",
+    "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1600&q=80",
+    "summary": "The Pink City, planned on a grid and still lived in. Amber Fort, City Palace, Jantar Mantar, and the gem bazaars are the heart of almost every north India programme C More writes.",
+    "highlights": [
+      "Amber Fort",
+      "City Palace and Jantar Mantar",
+      "Hawa Mahal",
+      "Johari Bazaar"
+    ]
+  },
+  {
+    "slug": "agra",
+    "name": "Agra",
+    "region": "Uttar Pradesh",
+    "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1600&q=80",
+    "summary": "The Mughal capital on the Yamuna. The Taj Mahal, Agra Fort, and Akbar’s tomb at Sikandra, with Fatehpur Sikri a short drive away.",
+    "highlights": [
+      "Taj Mahal",
+      "Agra Fort",
+      "Fatehpur Sikri",
+      "Sikandra"
+    ]
+  },
+  {
+    "slug": "jodhpur",
+    "name": "Jodhpur",
+    "region": "Rajasthan",
+    "image": "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=1600&q=80",
+    "summary": "The Blue City under Mehrangarh. A natural gateway to the desert road for camel safaris and the forts further west.",
+    "highlights": [
+      "Mehrangarh Fort",
+      "Blue city lanes",
+      "Jaswant Thada",
+      "Desert road to Jaisalmer"
+    ]
+  },
+  {
+    "slug": "jaisalmer",
+    "name": "Jaisalmer",
+    "region": "Rajasthan",
+    "image": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1600&q=80",
+    "summary": "A living sandstone fort on the edge of the Thar. Camel safaris, dunes, and havelis are how C More’s Rajasthan desert programmes spend their nights.",
+    "highlights": [
+      "Jaisalmer Fort",
+      "Patwon ki Haveli",
+      "Sam dunes",
+      "Camel safari"
+    ]
+  },
+  {
+    "slug": "ranakpur",
+    "name": "Ranakpur",
+    "region": "Rajasthan",
+    "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1600&q=80",
+    "summary": "A marble Jain temple complex in the Aravalli hills, usually visited on the drive between Jodhpur and Udaipur.",
+    "highlights": [
+      "Ranakpur Jain temple",
+      "Aravalli forest drive",
+      "Quiet stay between the cities"
+    ]
+  },
+  {
+    "slug": "ranthambore",
+    "name": "Ranthambore",
+    "region": "Rajasthan",
+    "image": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1600&q=80",
+    "summary": "Tiger reserve and ruined fort. C More uses it for short luxury breaks and as a wildlife pause inside longer Rajasthan routes.",
+    "highlights": [
+      "Jeep safari",
+      "Ranthambore Fort",
+      "Heritage hotel stays"
+    ]
+  },
+  {
+    "slug": "udaipur",
+    "name": "Udaipur",
+    "region": "Rajasthan",
+    "image": "https://images.unsplash.com/photo-1617516202907-ff75846e6667?auto=format&fit=crop&w=1600&q=80",
+    "summary": "Lakes, palaces, and the white city in the south of Rajasthan. A frequent last stop on camel-safari and honeymoon routes.",
+    "highlights": [
+      "Lake Pichola",
+      "City Palace",
+      "Bagore ki Haveli",
+      "Sunset boat ride"
+    ]
+  },
+  {
+    "slug": "kerala",
+    "name": "Kerala",
+    "region": "South India",
+    "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80",
+    "summary": "Backwaters, spice hills, and Ayurveda. Kumarakom, Kochi, Alleppey, and Thekkady are the places C More’s coconut and Ayurveda holidays actually stay.",
+    "highlights": [
+      "Vembanad houseboat",
+      "Kochi and Fort Kochi",
+      "Thekkady and Periyar",
+      "Ayurveda in Kumarakom"
+    ]
+  },
+  {
+    "slug": "varanasi",
+    "name": "Varanasi",
+    "region": "Uttar Pradesh",
+    "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1600&q=80",
+    "summary": "The river city on the Ganges, and the start of the Buddhist and temple circuits that continue to Sarnath, Bodhgaya, and Khajuraho.",
+    "highlights": [
+      "Ghats at dawn",
+      "Ganga Aarti",
+      "Sarnath",
+      "Old city lanes"
+    ]
+  },
+  {
+    "slug": "ladakh",
+    "name": "Ladakh",
+    "region": "Himalaya",
+    "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=80",
+    "summary": "High desert and monasteries. The Hemis festival programme is built around Leh and the masked dances at Hemis Gompa.",
+    "highlights": [
+      "Leh Palace",
+      "Hemis Monastery",
+      "Indus valley",
+      "Festival dances"
+    ]
+  },
+  {
+    "slug": "pushkar",
+    "name": "Pushkar",
+    "region": "Rajasthan",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80",
+    "summary": "A small pilgrimage town that becomes the Pushkar Fair each November: camels, cattle, competitions, and the holy lake.",
+    "highlights": [
+      "Pushkar Lake",
+      "Camel fair",
+      "Brahma Temple",
+      "Ajmer nearby"
+    ]
+  },
+  {
+    "slug": "srinagar",
+    "name": "Srinagar",
+    "region": "Jammu & Kashmir",
+    "image": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=80",
+    "summary": "Dal Lake, houseboats, Mughal gardens, and the road to Gulmarg, Sonmarg, and Pahalgam. C More’s Kashmir programme starts here.",
+    "highlights": [
+      "Dal Lake and shikara",
+      "Mughal gardens",
+      "Gulmarg",
+      "Pahalgam"
+    ]
+  },
+  {
+    "slug": "mumbai",
+    "name": "Mumbai",
+    "region": "Maharashtra",
+    "image": "https://images.unsplash.com/photo-1566553194-4493eac8c4c9?auto=format&fit=crop&w=1600&q=80",
+    "summary": "The harbour city that opens several C More circuits: Elephanta, Aurangabad’s caves, Goa, and the long North & West India with Nepal tour.",
+    "highlights": [
+      "Gateway of India",
+      "Elephanta Caves",
+      "Marine Drive",
+      "Ajanta and Ellora onward"
+    ]
+  },
+  {
+    "slug": "kolkata",
+    "name": "Kolkata",
+    "region": "West Bengal",
+    "image": "https://images.unsplash.com/photo-1558431382-27e303142256?auto=format&fit=crop&w=1600&q=80",
+    "summary": "The eastern start of C More’s Golden Triangle — East India tour, before Bhubaneswar, Puri, and the Northeast.",
+    "highlights": [
+      "Victoria Memorial",
+      "Howrah",
+      "Temples of the city",
+      "Onward to Odisha"
+    ]
+  },
+  {
+    "slug": "port-blair",
+    "name": "Port Blair",
+    "region": "Andaman & Nicobar",
+    "image": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=1600&q=80",
+    "summary": "The capital of the Andamans, and the start of C More’s island programme through Havelock and Neil.",
+    "highlights": [
+      "Cellular Jail",
+      "Ross Island",
+      "Havelock",
+      "Neil Island"
+    ]
+  }
+]

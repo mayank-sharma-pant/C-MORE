@@ -1,0 +1,74 @@
+[
+  {
+    "id": "g1",
+    "src": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1600&q=80",
+    "alt": "The Taj Mahal reflected in the water at Agra",
+    "place": "Agra"
+  },
+  {
+    "id": "g2",
+    "src": "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1600&q=80",
+    "alt": "Hawa Mahal, the Palace of Winds in Jaipur",
+    "place": "Jaipur"
+  },
+  {
+    "id": "g3",
+    "src": "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1600&q=80",
+    "alt": "Amber Fort above Jaipur",
+    "place": "Jaipur"
+  },
+  {
+    "id": "g4",
+    "src": "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1600&q=80",
+    "alt": "India Gate in New Delhi",
+    "place": "New Delhi"
+  },
+  {
+    "id": "g5",
+    "src": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1600&q=80",
+    "alt": "Morning on the ghats of Varanasi",
+    "place": "Varanasi"
+  },
+  {
+    "id": "g6",
+    "src": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80",
+    "alt": "A houseboat on the Kerala backwaters",
+    "place": "Kerala"
+  },
+  {
+    "id": "g7",
+    "src": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1600&q=80",
+    "alt": "Sandstone fort at Jaisalmer",
+    "place": "Jaisalmer"
+  },
+  {
+    "id": "g8",
+    "src": "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=1600&q=80",
+    "alt": "Blue houses of Jodhpur",
+    "place": "Jodhpur"
+  },
+  {
+    "id": "g9",
+    "src": "https://images.unsplash.com/photo-1617516202907-ff75846e6667?auto=format&fit=crop&w=1600&q=80",
+    "alt": "Lake palace at Udaipur",
+    "place": "Udaipur"
+  },
+  {
+    "id": "g10",
+    "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80",
+    "alt": "Camels in the Rajasthan desert",
+    "place": "Pushkar"
+  },
+  {
+    "id": "g11",
+    "src": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=80",
+    "alt": "A monastery in the Ladakh landscape",
+    "place": "Ladakh"
+  },
+  {
+    "id": "g12",
+    "src": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1600&q=80",
+    "alt": "A tiger in dry forest",
+    "place": "Ranthambore"
+  }
+]
