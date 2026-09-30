@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "catalog.wlimg.com" },
     ],
   },
   async redirects() {
@@ -67,7 +68,11 @@ const nextConfig: NextConfig = {
       { source: "/tour-packages/rajasthan-shekhawati-region-tour.htm", destination: "/packages/rajasthan-shekhawati", permanent: true },
       { source: "/tour-packages/luxury-cruisein-kerala-gods-own-country-tour1.htm", destination: "/packages/kerala-luxury-cruise", permanent: true },
       { source: "/tour-packages/the-mysterious-islandsof-andaman-and-nicobar-tour.htm", destination: "/packages/andaman-nicobar", permanent: true },
+      { source: "/blog/", destination: "/blog", permanent: true },
     ];
+  },
+  async rewrites() {
+    return [{ source: "/tour-packages.rss", destination: "/rss" }];
   },
 };
 

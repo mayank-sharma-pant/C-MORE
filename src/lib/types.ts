@@ -14,6 +14,7 @@ export interface TourPackage {
   price: number;
   currency: Currency;
   priceDisplay: string;
+  compareAtDisplay?: string;
   image: string;
   locations: string[];
   themes: string[];
@@ -93,6 +94,7 @@ export interface SiteSettings {
     linkedin: string;
     twitter: string;
     tripadvisor: string;
+    touristlink: string;
   };
   brochurePdf: string;
   awardUrl: string;

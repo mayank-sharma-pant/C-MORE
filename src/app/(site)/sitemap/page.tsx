@@ -25,6 +25,7 @@ export default async function SitemapPage() {
         ["/currency", "Currency converter"],
         ["/gallery", "Gallery"],
         ["/blog", "Blog"],
+        ["/tour-packages.rss", "RSS"],
       ],
     },
     {

@@ -28,7 +28,12 @@ export default async function PackagePage({ params }: Props) {
           <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">{pkg.duration}</p>
           <h1 className="mt-3 max-w-4xl text-3xl leading-tight md:text-4xl">{pkg.name}</h1>
           <p className="mt-4 text-white/75">{pkg.locations.join(" · ")}</p>
-          <p className="mt-5 font-display text-2xl">{pkg.priceDisplay} <span className="text-base text-white/70">per person</span></p>
+          <p className="mt-5 font-display text-2xl">
+            {pkg.compareAtDisplay && (
+              <span className="mr-3 text-lg text-white/55 line-through">{pkg.compareAtDisplay}</span>
+            )}
+            {pkg.priceDisplay} <span className="text-base text-white/70">per person</span>
+          </p>
         </div>
       </section>
       <section className="section">

@@ -28,6 +28,17 @@ const scenes = [
 ];
 
 const STOP_MS = 5200;
+const hotOrder = [
+  "pushkar-fair",
+  "splendors-of-rajasthan",
+  "kerala-coconut",
+  "footsteps-of-buddha",
+  "golden-triangle",
+  "taj-temple-ganges",
+  "ladakh-hemis",
+  "camel-safari",
+];
+const destinationOrder = ["ranakpur", "jaisalmer", "ranthambore", "udaipur", "new-delhi", "jaipur", "agra", "jodhpur"];
 
 export function HomeView({
   packages,
@@ -40,7 +51,8 @@ export function HomeView({
   testimonials: Testimonial[];
   settings: SiteSettings;
 }) {
-  const featured = packages.filter((pkg) => pkg.featured).slice(0, 6);
+  const featured = hotOrder.flatMap((slug) => packages.filter((pkg) => pkg.slug === slug));
+  const places = destinationOrder.flatMap((slug) => destinations.filter((place) => place.slug === slug));
   const phoneHref = `tel:${settings.phone.replace(/[^\d+]/g, "")}`;
   const waHref = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent("Hello, I found C More Travels and would like to enquire about a tour.")}`;
 
@@ -62,7 +74,7 @@ export function HomeView({
               All {packages.length} packages <ArrowRight size={15} />
             </Link>
           </div>
-          <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((pkg, index) => (
               <Reveal key={pkg.slug} delay={(index % 3) * 0.08}>
                 <PackageCard pkg={pkg} />
@@ -72,9 +84,11 @@ export function HomeView({
         </div>
       </section>
 
+      <ServicesBand />
+      <DestinationIndex destinations={places} />
       <ActivityRail />
       <ThemeRail />
-      <DestinationIndex destinations={destinations.slice(0, 8)} />
+      <AboutBand />
       <Voices testimonials={testimonials.slice(0, 3)} />
       <Closing settings={settings} phoneHref={phoneHref} waHref={waHref} />
     </>
@@ -99,6 +113,73 @@ function TrustStrip({ settings }: { settings: SiteSettings }) {
           </div>
         ))}
       </dl>
+    </section>
+  );
+}
+
+const services = [
+  {
+    href: "/services/tour-operators",
+    title: "Tour Operators",
+    image: "https://catalog.wlimg.com/4/401707/small-images/tour-operators-43961.jpg",
+    text: "An established tour operator, C More is known among agents and clients as an honest, reliable, efficient professional office.",
+  },
+  {
+    href: "/services/mice",
+    title: "MICE Services",
+    image: "https://catalog.wlimg.com/4/401707/small-images/mice-services-43962.jpg",
+    text: "India’s lure as an incentive destination has been growing steadily. C More plans meetings and incentives and stays with the group on the ground.",
+  },
+];
+
+function ServicesBand() {
+  return (
+    <section className="section bg-white">
+      <div className="wrap">
+        <Reveal>
+          <p className="eyebrow text-garden">Our services</p>
+        </Reveal>
+        <Lines className="mt-4 text-3xl leading-[1.05] md:text-5xl" lines={["Two desks.", <em key="e">One office.</em>]} />
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {services.map((service) => (
+            <Link key={service.href} href={service.href} className="group grid gap-5 sm:grid-cols-[9rem_1fr] sm:items-center">
+              <span className="relative block aspect-square overflow-hidden rounded-[3px] bg-ink">
+                <Image src={service.image} alt="" fill sizes="180px" className="object-cover photo-zoom" />
+              </span>
+              <span>
+                <span className="font-display text-2xl text-saffron">{service.title}</span>
+                <span className="mt-2 block text-sm leading-relaxed text-muted">{service.text}</span>
+                <span className="mt-4 inline-block text-sm underline decoration-saffron underline-offset-4">View more</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AboutBand() {
+  return (
+    <section className="section">
+      <div className="wrap grid items-end gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <div>
+          <Reveal>
+            <p className="eyebrow text-garden">About C More Travel & Tours</p>
+          </Reveal>
+          <blockquote className="mt-5 font-display text-2xl leading-snug md:text-3xl">
+            “There is no happiness for him who does not travel. Therefore, wander. The fortune of him who is sitting sits. It rises when he rises, it sleeps when he sleeps, it moves when he moves. Therefore, wander!”
+          </blockquote>
+        </div>
+        <div>
+          <p className="text-muted">
+            C More caters to the needs of luxury and budget travellers alike. The organisational structure of the company assures personalised services suited to the needs of people of different countries and regions of the world.
+          </p>
+          <Link href="/about" className="link-arrow mt-6 text-sm">
+            Read more <ArrowRight size={15} />
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }

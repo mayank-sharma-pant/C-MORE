@@ -1,50 +1,128 @@
 [
   {
     "id": "t1",
-    "quote": "We were met at the airport and dropped back four days later. They helped us plan the agenda and accommodated every interest. The trip to Agra included a guide for the Taj, which we would recommend. Thank you, Mr Brahma, for the hospitality.",
-    "name": "Guests",
-    "detail": "Delhi and Agra"
+    "quote": "We really loved our time in Ladakh. Our guide, Dorjay, was kind and very patient. I would go back, and the stay at Hotel Dragon was lovely — such kind people working there. Dharamsala was different from what I expected, and I loved the hotel. Manali was a surprise. Shimla’s hotel was fascinating: old and curious.",
+    "name": "Cora Yee",
+    "detail": "1 Aug 2018 · Ladakh"
   },
   {
     "id": "t2",
-    "quote": "My husband and I came back from Ladakh organised by C More Delhi. Mr Brahma was always ready to answer by email and phone. They were flexible, and the local guides let us actually meet the place. We will travel with them again.",
-    "name": "Guests",
-    "detail": "Ladakh"
+    "quote": "Thank you again for all of your help. Liz and I had a fantastic trip and the service you provided was impeccable. We will certainly recommend you to our friends. It was a very memorable holiday, one of the best we have ever had.",
+    "name": "Richard & Elizabeth",
+    "detail": "1 Aug 2018"
   },
   {
     "id": "t3",
-    "quote": "We really loved our time in Ladakh. Our guide, Dorjay, was kind and very patient. I would go back, and the stay at Hotel Dragon was lovely.",
-    "name": "Guest",
-    "detail": "Leh"
+    "quote": "I would like to extend my sincere gratitude for the arrangements for my trip to Kashmir. It was professional and excellent, and at the same time friendly and personalised. I shall recommend your company to my friends as reliable and trustworthy.",
+    "name": "Irina Golobokava",
+    "detail": "1 Aug 2018 · Kashmir"
   },
   {
     "id": "t4",
-    "quote": "Liz and I had a fantastic trip and the service was impeccable. We will recommend you, and we hope to see you again.",
-    "name": "A guest writing to Kamal Brahma",
-    "detail": "India"
+    "quote": "Thank you for a perfectly organised tour. We thoroughly enjoyed Delhi, Jaipur, and Agra. All arrangements were impeccable. Kudos to you and to your agency for living up to the promise.",
+    "name": "Dr. Shekhar Gothoskar",
+    "detail": "1 Aug 2018 · Dubai"
   },
   {
     "id": "t5",
-    "quote": "I don’t have words, but all 15 of us had a wonderful trip. Thank you for the organisational professionalism and the resourcefulness that made the tour work.",
-    "name": "A group of 15",
-    "detail": "India"
+    "quote": "Thank you again for this well organised holiday. We were taken with the kindness of the people, the food, and the countryside. Thank you for organising a very memorable trip of Rajasthan.",
+    "name": "Agnès Jarlet",
+    "detail": "1 Aug 2018 · Geneva"
   },
   {
     "id": "t6",
-    "quote": "We remember with pleasure our trip to Delhi, Agra, and an intensive tour of Rajasthan in November 1995, organised in a highly professional manner.",
-    "name": "R. Dutt and family",
-    "detail": "Krefeld, Germany"
+    "quote": "I don’t have words, but all 15 of us had a wonderful trip. Thank you for the organisational professionalism and the resourcefulness that made this tour a superb holiday.",
+    "name": "Tina Cooper",
+    "detail": "1 Aug 2018 · Group of 15"
   },
   {
     "id": "t7",
-    "quote": "Thank you for a perfectly organised tour. We thoroughly enjoyed Delhi, Jaipur, and Agra. The arrangements were impeccable.",
-    "name": "Guests",
-    "detail": "Golden Triangle"
+    "quote": "We remember with high pleasure our trip to Delhi, Agra, and an intensive tour of Rajasthan in November 1995, which was perfectly organised in a highly professional manner.",
+    "name": "Rammoy Dutt and family",
+    "detail": "1 Aug 2018 · Krefeld, Germany"
   },
   {
     "id": "t8",
-    "quote": "My sincere gratitude for the Kashmir arrangements. They were professional and excellent, and at the same time friendly and personal.",
-    "name": "Guest",
-    "detail": "Kashmir"
+    "quote": "The tour covered the main sights of Rajasthan in two weeks, with 12 people in the group. Transport and hotels were excellent, individual preferences were built in from the start, and sudden changes were handled calmly. The local guides gave us the history and the India of today. We recommend the company.",
+    "name": "Kasturi & Udo Ilbertz",
+    "detail": "1 Aug 2018 · Rajasthan"
+  },
+  {
+    "id": "t9",
+    "quote": "On our second visit we wanted a quiet place. C More booked a hidden resort in Goa: the hotel, restaurant, and pool were what we were looking for. For resting, we can recommend it. If someone wants adventure, it is too calm. The perfect honeymoon place.",
+    "name": "Kasturi & Udo Ilbertz",
+    "detail": "1 Aug 2018 · Goa"
+  },
+  {
+    "id": "t10",
+    "quote": "It was a pleasure to meet you and your wife. Thank you so much for our incredible journey in India.",
+    "name": "Debra Leibowitz",
+    "detail": "1 Aug 2018"
+  },
+  {
+    "id": "t11",
+    "quote": "It was a five-star service, with all the care, though we stayed in three- and four-star hotels. Professional and personal, down to the smallest request. Kamlesh received us on arrival, came with us to Kochi, and saw us off.",
+    "name": "Bart",
+    "detail": "1 Aug 2018 · Kochi"
+  },
+  {
+    "id": "t12",
+    "quote": "I have used C More a few times. They made the arrangements for hotels, transport, and sightseeing, and got strong rooms at reasonable prices. My family and I will use them again.",
+    "name": "Ravi L",
+    "detail": "1 Aug 2018"
+  },
+  {
+    "id": "t13",
+    "quote": "We had never been to New Delhi and were recommended C More. From the airport pickup to the drop four days later, we were looked after: the agenda, every interest, and a guide for the Taj in Agra. Thank you, Mr Brahma.",
+    "name": "Kiran Vuppala",
+    "detail": "1 Aug 2018 · Delhi and Agra"
+  },
+  {
+    "id": "t14",
+    "quote": "I found this company proactive with information, sound advice, and a responsive service. I would recommend it to anyone travelling to Delhi or India, the first time or the tenth.",
+    "name": "Manohar P",
+    "detail": "1 Aug 2018"
+  },
+  {
+    "id": "t15",
+    "quote": "We arrived back in Miami safely. Our time in India was impressive, and I am already thinking of a return. Thank you for the hospitality and for arranging the tours. Meeting you, and meeting Lovely, was a highlight alongside the Taj Mahal.",
+    "name": "Chantal Falby",
+    "detail": "1 Aug 2018 · Miami"
+  },
+  {
+    "id": "t16",
+    "quote": "They planned, arranged, and ran our itinerary — hotels, transport, sightseeing — in a professional way for our political and business delegation from the USA. Highly recommend.",
+    "name": "Calvin Kohli",
+    "detail": "1 Aug 2018"
+  },
+  {
+    "id": "t17",
+    "quote": "I have been a consistent client. I have compared prices and itineraries with other agents. This company offers the strongest package. Give it a try.",
+    "name": "Guido Novati",
+    "detail": "24 Feb 2018"
+  },
+  {
+    "id": "t18",
+    "quote": "I was looking for an agent who could provide a strong package. I tried many sites and found this company the best. They got me a deal inside my budget.",
+    "name": "Vichu",
+    "detail": "6 Mar 2018"
+  },
+  {
+    "id": "t19",
+    "quote": "The packages run from luxury to budget, and they are properly built. I had a strong experience booking with them.",
+    "name": "Debajit Saha",
+    "detail": "13 Mar 2018"
+  },
+  {
+    "id": "t20",
+    "quote": "My husband and I came back from Ladakh organised by C More Delhi. Mr Brahma answered email and phone quickly, with kindness and competence. They were flexible, knew the ground, and put us with excellent local guides. We will travel with them again.",
+    "name": "Manuela Spadoni",
+    "detail": "1 Aug 2018 · Ladakh"
+  },
+  {
+    "id": "t21",
+    "quote": "My husband and I had a tour in Ladakh planned with C More. We recommend the agency for competence and reliability. Mr Brahma answered quickly, understood what we were looking for, and made a tailor-made trip at an honest price.",
+    "name": "Manuela Spadoni",
+    "detail": "1 Aug 2018 · Ladakh"
   }
 ]

@@ -490,6 +490,7 @@
     "price": 2550,
     "currency": "INR",
     "priceDisplay": "INR 2,550",
+    "compareAtDisplay": "INR 1,599",
     "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1600&q=80",
     "locations": [
       "New Delhi",

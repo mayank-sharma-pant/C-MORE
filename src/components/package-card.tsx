@@ -23,6 +23,9 @@ export function PackageCard({ pkg }: { pkg: TourPackage }) {
         </span>
         <p className="absolute bottom-4 left-4 font-display text-2xl text-white">
           <span className="text-sm text-white/70">from </span>
+          {pkg.compareAtDisplay && (
+            <span className="mr-2 text-base text-white/60 line-through">{pkg.compareAtDisplay}</span>
+          )}
           {pkg.priceDisplay}
         </p>
       </div>

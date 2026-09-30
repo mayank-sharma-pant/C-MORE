@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -71,13 +72,8 @@ export function Navbar({ phone }: { phone?: string }) {
       }`}
     >
       <div className="relative z-[60] wrap flex items-center justify-between gap-4">
-        <Link href="/" translate="no" suppressHydrationWarning className="shrink-0 leading-none" onClick={() => setOpen(false)}>
-          <span className={`font-display tracking-tight transition-all duration-500 ${solid ? "text-[1.2rem]" : "text-[1.35rem]"}`}>
-            C More
-          </span>
-          <span className={`mt-0.5 block text-[9px] uppercase tracking-[0.22em] ${solid ? "text-muted" : "text-white/65"}`}>
-            Travel & Tours · New Delhi
-          </span>
+        <Link href="/" translate="no" suppressHydrationWarning className="shrink-0 rounded-sm bg-white px-1.5 py-1 leading-none" onClick={() => setOpen(false)}>
+          <Image src="/logo.png" alt="C More Travel & Tours" width={201} height={61} priority className="h-9 w-auto sm:h-11" />
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex">
@@ -193,7 +189,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
     <footer className="bg-ink text-white">
       <div className="wrap grid gap-12 py-16 md:grid-cols-4">
         <div className="md:col-span-1">
-          <p translate="no" suppressHydrationWarning className="font-display text-2xl">C More</p>
+          <Image src="/logo.png" alt="C More Travel & Tours" width={201} height={61} className="h-12 w-auto rounded-sm bg-white px-1.5 py-1" />
           <p className="mt-3 text-sm leading-relaxed text-white/70">
             Incoming tours from Green Park, New Delhi, since {settings.established}.
           </p>
@@ -201,8 +197,11 @@ export function Footer({ settings }: { settings: SiteSettings }) {
             <a href={settings.social.facebook} target="_blank" rel="noreferrer">Facebook</a>
             <a href={settings.social.tripadvisor} target="_blank" rel="noreferrer">TripAdvisor</a>
             <a href={settings.social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href={settings.social.twitter} target="_blank" rel="noreferrer">Twitter</a>
             <a href={settings.social.instagram} target="_blank" rel="noreferrer">Instagram</a>
+            <a href={settings.social.touristlink} target="_blank" rel="noreferrer">Touristlink</a>
           </div>
+          <NewsletterForm />
         </div>
         <div>
           <p className="text-[11px] uppercase tracking-[0.22em] text-white/45">Visit</p>
@@ -216,6 +215,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
             <li><Link href="/terms">Terms</Link></li>
             <li><Link href="/enquiry">Enquiry</Link></li>
             <li><Link href="/sitemap">Site map</Link></li>
+            <li><a href="/tour-packages.rss">RSS</a></li>
           </ul>
         </div>
         <div>
@@ -253,6 +253,60 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         </div>
       </div>
     </footer>
+  );
+}
+
+function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [mode, setMode] = useState<"subscribe" | "unsubscribe">("subscribe");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function onSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    setStatus("sending");
+    const response = await fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, subscribe: mode === "subscribe" }),
+    });
+    setStatus(response.ok ? "sent" : "error");
+  }
+
+  return (
+    <form onSubmit={onSubmit} className="mt-6">
+      <p className="text-[11px] uppercase tracking-[0.22em] text-white/45">Newsletter</p>
+      {status === "sent" ? (
+        <p className="mt-3 text-sm text-white/80">
+          {mode === "subscribe" ? "You are on the list." : "You are unsubscribed."}
+        </p>
+      ) : (
+        <>
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="Enter email"
+            aria-label="Newsletter email"
+            className="mt-3 w-full rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white outline-none placeholder:text-white/40"
+          />
+          <div className="mt-3 flex gap-4 text-sm text-white/75">
+            <label className="inline-flex items-center gap-2">
+              <input type="radio" name="newsletter" checked={mode === "subscribe"} onChange={() => setMode("subscribe")} />
+              Subscribe
+            </label>
+            <label className="inline-flex items-center gap-2">
+              <input type="radio" name="newsletter" checked={mode === "unsubscribe"} onChange={() => setMode("unsubscribe")} />
+              Unsubscribe
+            </label>
+          </div>
+          <button type="submit" disabled={status === "sending"} className="mt-3 rounded-full bg-white px-4 py-2 text-sm text-ink">
+            {status === "sending" ? "Sending" : "Submit"}
+          </button>
+          {status === "error" && <p className="mt-2 text-sm text-saffron-soft">That email could not be saved.</p>}
+        </>
+      )}
+    </form>
   );
 }
 
