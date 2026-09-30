@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import type { SiteSettings } from "@/lib/types";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -70,7 +71,7 @@ export function Navbar({ phone }: { phone?: string }) {
       }`}
     >
       <div className="relative z-[60] wrap flex items-center justify-between gap-4">
-        <Link href="/" className="shrink-0 leading-none" onClick={() => setOpen(false)}>
+        <Link href="/" translate="no" suppressHydrationWarning className="shrink-0 leading-none" onClick={() => setOpen(false)}>
           <span className={`font-display tracking-tight transition-all duration-500 ${solid ? "text-[1.2rem]" : "text-[1.35rem]"}`}>
             C More
           </span>
@@ -123,6 +124,7 @@ export function Navbar({ phone }: { phone?: string }) {
         </nav>
 
         <div className="flex items-center gap-3">
+          <LanguageSwitcher solid={solid} />
           {phone && (
             <a
               href={`tel:${phone.replace(/[^\d+]/g, "")}`}
@@ -170,6 +172,7 @@ export function Navbar({ phone }: { phone?: string }) {
                   {link.label}
                 </Link>
               ))}
+              <LanguageSwitcher variant="menu" />
               <Link
                 href="/enquiry"
                 onClick={() => setOpen(false)}
@@ -190,7 +193,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
     <footer className="bg-ink text-white">
       <div className="wrap grid gap-12 py-16 md:grid-cols-4">
         <div className="md:col-span-1">
-          <p className="font-display text-2xl">C More</p>
+          <p translate="no" suppressHydrationWarning className="font-display text-2xl">C More</p>
           <p className="mt-3 text-sm leading-relaxed text-white/70">
             Incoming tours from Green Park, New Delhi, since {settings.established}.
           </p>

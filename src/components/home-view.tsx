@@ -7,13 +7,14 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { InquiryForm } from "@/components/inquiry-form";
 import { PackageCard } from "@/components/package-card";
 import { Lines, Magnetic, Reveal } from "@/components/reveal";
+import { activities, themes } from "@/lib/taxonomy";
 import type { Destination, SiteSettings, Testimonial, TourPackage } from "@/lib/types";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -71,6 +72,8 @@ export function HomeView({
         </div>
       </section>
 
+      <ActivityRail />
+      <ThemeRail />
       <DestinationIndex destinations={destinations.slice(0, 8)} />
       <Voices testimonials={testimonials.slice(0, 3)} />
       <Closing settings={settings} phoneHref={phoneHref} waHref={waHref} />
@@ -216,6 +219,136 @@ function Hero({ settings, phoneHref }: { settings: SiteSettings; phoneHref: stri
             ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+const activityOrder = ["family", "jungle-safari", "group", "hill-stations", "heritage", "forts-palaces", "lakes-rivers", "honeymoon"];
+const themeOrder = ["culture-heritage", "family-group", "religious-pilgrimage", "monuments", "honeymoon", "women-friendly", "luxury", "winter"];
+
+function ordered<T extends { slug: string }>(items: readonly T[], order: string[]) {
+  return order.flatMap((slug) => items.filter((item) => item.slug === slug));
+}
+
+function tourLabel(title: string) {
+  return /tours$/i.test(title) ? title : `${title} Tours`;
+}
+
+function Rail({ children, label }: { children: ReactNode; label: string }) {
+  const scroller = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
+
+  function move(direction: number) {
+    const node = scroller.current;
+    if (!node) return;
+    const card = node.firstElementChild as HTMLElement | null;
+    const width = card ? card.getBoundingClientRect().width + 24 : node.clientWidth;
+    node.scrollBy({ left: direction * width, behavior: reduce ? "auto" : "smooth" });
+  }
+
+  return (
+    <div className="relative mt-12">
+      <div
+        ref={scroller}
+        className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-px-1 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {children}
+      </div>
+      <button
+        type="button"
+        aria-label={`Previous ${label}`}
+        onClick={() => move(-1)}
+        className="absolute top-[38%] -left-3 z-10 grid size-10 place-items-center rounded-full border border-line bg-white text-ink shadow-sm transition hover:border-ink sm:-left-5"
+      >
+        <ChevronLeft size={18} />
+      </button>
+      <button
+        type="button"
+        aria-label={`Next ${label}`}
+        onClick={() => move(1)}
+        className="absolute top-[38%] -right-3 z-10 grid size-10 place-items-center rounded-full border border-line bg-white text-ink shadow-sm transition hover:border-ink sm:-right-5"
+      >
+        <ChevronRight size={18} />
+      </button>
+    </div>
+  );
+}
+
+function ActivityRail() {
+  const items = ordered(activities, activityOrder);
+
+  return (
+    <section className="section bg-white">
+      <div className="wrap">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <Reveal>
+              <p className="eyebrow text-garden">Packages by activity</p>
+            </Reveal>
+            <Lines className="mt-4 text-3xl leading-[1.05] md:text-5xl" lines={["Days built around", <em key="e">one kind of travel</em>]} />
+          </div>
+          <Link href="/activities" className="link-arrow hidden text-sm sm:inline-flex">
+            All activities <ArrowRight size={15} />
+          </Link>
+        </div>
+        <Rail label="activities">
+          {items.map((activity) => (
+            <Link
+              key={activity.slug}
+              href={`/activities/${activity.slug}`}
+              className="group w-[78%] shrink-0 snap-start sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
+            >
+              <span className="relative block aspect-[4/3] overflow-hidden rounded-[3px] bg-ink">
+                <Image src={activity.image} alt="" fill sizes="(min-width: 1024px) 25vw, 70vw" className="object-cover photo-zoom" />
+              </span>
+              <span className="mt-4 block text-center font-display text-lg text-saffron">{tourLabel(activity.title)}</span>
+            </Link>
+          ))}
+        </Rail>
+        <Link href="/activities" className="link-arrow mt-8 text-sm sm:hidden">
+          All activities <ArrowRight size={15} />
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+function ThemeRail() {
+  const items = ordered(themes, themeOrder);
+
+  return (
+    <section className="section">
+      <div className="wrap">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <Reveal>
+              <p className="eyebrow text-garden">Tour by theme</p>
+            </Reveal>
+            <Lines className="mt-4 text-3xl leading-[1.05] md:text-5xl" lines={["Choose the reason", <em key="e">for the trip</em>]} />
+          </div>
+          <Link href="/themes" className="link-arrow hidden text-sm sm:inline-flex">
+            All themes <ArrowRight size={15} />
+          </Link>
+        </div>
+        <Rail label="themes">
+          {items.map((theme) => (
+            <Link
+              key={theme.slug}
+              href={`/themes/${theme.slug}`}
+              className="group flex w-[78%] shrink-0 snap-start flex-col items-center rounded-[3px] bg-white px-4 py-8 sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
+            >
+              <span className="relative size-36 overflow-hidden rounded-full bg-ink sm:size-40">
+                <Image src={theme.image} alt="" fill sizes="160px" className="object-cover photo-zoom" />
+              </span>
+              <span className="mt-5 text-center font-display text-lg leading-snug text-saffron">{tourLabel(theme.title)}</span>
+              <span className="mt-4 rounded-[3px] bg-ink px-4 py-1.5 text-[12px] tracking-wide text-white">Read more</span>
+            </Link>
+          ))}
+        </Rail>
+        <Link href="/themes" className="link-arrow mt-8 text-sm sm:hidden">
+          All themes <ArrowRight size={15} />
+        </Link>
       </div>
     </section>
   );
