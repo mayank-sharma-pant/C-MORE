@@ -18,7 +18,7 @@ export function PageHero({
         <Image src={image} alt="" fill priority className="object-cover opacity-55" sizes="100vw" />
       </div>
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/75 to-ink/20" />
-      <div className="wrap relative flex min-h-[46vh] flex-col justify-end py-16 md:min-h-[58vh] md:py-24">
+      <div className="wrap relative flex min-h-[46vh] flex-col justify-end py-16 pt-28 md:min-h-[58vh] md:py-24 md:pt-32">
         <p className="hero-copy eyebrow text-white/70">{eyebrow}</p>
         <Lines
           as="h1"

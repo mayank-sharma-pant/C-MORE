@@ -24,7 +24,7 @@ export default async function PackagePage({ params }: Props) {
       <section className="relative isolate min-h-[52vh] bg-ink text-white">
         <Image src={pkg.image} alt="" fill priority className="object-cover opacity-60" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20" />
-        <div className="wrap relative flex min-h-[52vh] flex-col justify-end py-12">
+        <div className="wrap relative flex min-h-[52vh] flex-col justify-end py-12 pt-28">
           <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">{pkg.duration}</p>
           <h1 className="mt-3 max-w-4xl text-3xl leading-tight md:text-4xl">{pkg.name}</h1>
           <p className="mt-4 text-white/75">{pkg.locations.join(" · ")}</p>

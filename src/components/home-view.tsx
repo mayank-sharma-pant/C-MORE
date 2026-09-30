@@ -119,13 +119,13 @@ function Hero({ settings, phoneHref }: { settings: SiteSettings; phoneHref: stri
 
   return (
     <section ref={ref} className="relative isolate overflow-hidden text-white">
-      <motion.div style={{ y: imageY }} className="absolute -inset-y-[12%] inset-x-0 -z-20">
+      <motion.div style={{ y: imageY }} className="absolute inset-x-0 top-0 -bottom-[18%] -z-20">
         <AnimatePresence initial={false}>
           <motion.div
             key={scene.place}
             className="absolute inset-0"
-            initial={reduce ? { opacity: 0, zIndex: 2 } : { opacity: 0, scale: 1.08, zIndex: 2 }}
-            animate={{ opacity: 1, scale: 1, zIndex: 2 }}
+            initial={{ opacity: 0, zIndex: 2 }}
+            animate={{ opacity: 1, zIndex: 2 }}
             exit={{
               zIndex: 1,
               opacity: 0,
@@ -133,14 +133,21 @@ function Hero({ settings, phoneHref }: { settings: SiteSettings; phoneHref: stri
             }}
             transition={{ duration: 1.1, ease: [0.76, 0, 0.24, 1] }}
           >
-            <Image src={scene.image} alt={`${scene.place}: ${scene.note}`} fill priority className="object-cover" sizes="100vw" />
+            <Image
+              src={scene.image}
+              alt={`${scene.place}: ${scene.note}`}
+              fill
+              priority
+              className="object-cover object-[center_20%]"
+              sizes="100vw"
+            />
           </motion.div>
         </AnimatePresence>
       </motion.div>
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/55 to-ink/15" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-ink/50 to-transparent" />
 
-      <div className="wrap relative flex min-h-[calc(100svh-7.25rem)] flex-col justify-end py-12 lg:justify-center lg:py-16">
+      <div className="wrap relative flex min-h-[100svh] flex-col justify-end py-16 pt-28 lg:justify-center lg:py-20">
         <motion.div style={{ y: copyY, opacity: fade }} className="max-w-xl">
           <motion.p
             className="eyebrow text-white/70"
