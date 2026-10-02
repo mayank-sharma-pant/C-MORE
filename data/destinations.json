@@ -4,10 +4,10 @@
     "name": "New Delhi",
     "region": "Delhi",
     "image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1600&q=80",
-    "summary": "Seven cities stacked on one plain. C More meets every inbound guest at Indira Gandhi International Airport and starts the programme among Lutyens’ avenues, Qutub Minar, Humayun’s Tomb, and the lanes of Shahjahanabad.",
+    "summary": "Seven cities stacked on one plain. C More meets every inbound guest at Indira Gandhi International Airport and starts the programme among Lutyens\u2019 avenues, Qutub Minar, Humayun\u2019s Tomb, and the lanes of Shahjahanabad.",
     "highlights": [
       "India Gate and the diplomatic enclave",
-      "Qutub Minar and Humayun’s Tomb",
+      "Qutub Minar and Humayun\u2019s Tomb",
       "Red Fort, Chandni Chowk, and Jama Masjid",
       "Raj Ghat"
     ]
@@ -30,7 +30,7 @@
     "name": "Agra",
     "region": "Uttar Pradesh",
     "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1600&q=80",
-    "summary": "The Mughal capital on the Yamuna. The Taj Mahal, Agra Fort, and Akbar’s tomb at Sikandra, with Fatehpur Sikri a short drive away.",
+    "summary": "The Mughal capital on the Yamuna. The Taj Mahal, Agra Fort, and Akbar\u2019s tomb at Sikandra, with Fatehpur Sikri a short drive away.",
     "highlights": [
       "Taj Mahal",
       "Agra Fort",
@@ -56,7 +56,7 @@
     "name": "Jaisalmer",
     "region": "Rajasthan",
     "image": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1600&q=80",
-    "summary": "A living sandstone fort on the edge of the Thar. Camel safaris, dunes, and havelis are how C More’s Rajasthan desert programmes spend their nights.",
+    "summary": "A living sandstone fort on the edge of the Thar. Camel safaris, dunes, and havelis are how C More\u2019s Rajasthan desert programmes spend their nights.",
     "highlights": [
       "Jaisalmer Fort",
       "Patwon ki Haveli",
@@ -106,7 +106,7 @@
     "name": "Kerala",
     "region": "South India",
     "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80",
-    "summary": "Backwaters, spice hills, and Ayurveda. Kumarakom, Kochi, Alleppey, and Thekkady are the places C More’s coconut and Ayurveda holidays actually stay.",
+    "summary": "Backwaters, spice hills, and Ayurveda. Kumarakom, Kochi, Alleppey, and Thekkady are the places C More\u2019s coconut and Ayurveda holidays actually stay.",
     "highlights": [
       "Vembanad houseboat",
       "Kochi and Fort Kochi",
@@ -158,7 +158,7 @@
     "name": "Srinagar",
     "region": "Jammu & Kashmir",
     "image": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=80",
-    "summary": "Dal Lake, houseboats, Mughal gardens, and the road to Gulmarg, Sonmarg, and Pahalgam. C More’s Kashmir programme starts here.",
+    "summary": "Dal Lake, houseboats, Mughal gardens, and the road to Gulmarg, Sonmarg, and Pahalgam. C More\u2019s Kashmir programme starts here.",
     "highlights": [
       "Dal Lake and shikara",
       "Mughal gardens",
@@ -171,7 +171,7 @@
     "name": "Mumbai",
     "region": "Maharashtra",
     "image": "https://images.unsplash.com/photo-1566553194-4493eac8c4c9?auto=format&fit=crop&w=1600&q=80",
-    "summary": "The harbour city that opens several C More circuits: Elephanta, Aurangabad’s caves, Goa, and the long North & West India with Nepal tour.",
+    "summary": "The harbour city that opens several C More circuits: Elephanta, Aurangabad\u2019s caves, Goa, and the long North & West India with Nepal tour.",
     "highlights": [
       "Gateway of India",
       "Elephanta Caves",
@@ -184,7 +184,7 @@
     "name": "Kolkata",
     "region": "West Bengal",
     "image": "https://images.unsplash.com/photo-1558431382-27e303142256?auto=format&fit=crop&w=1600&q=80",
-    "summary": "The eastern start of C More’s Golden Triangle — East India tour, before Bhubaneswar, Puri, and the Northeast.",
+    "summary": "The eastern start of C More\u2019s Golden Triangle \u2014 East India tour, before Bhubaneswar, Puri, and the Northeast.",
     "highlights": [
       "Victoria Memorial",
       "Howrah",
@@ -197,7 +197,7 @@
     "name": "Port Blair",
     "region": "Andaman & Nicobar",
     "image": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=1600&q=80",
-    "summary": "The capital of the Andamans, and the start of C More’s island programme through Havelock and Neil.",
+    "summary": "The capital of the Andamans, and the start of C More\u2019s island programme through Havelock and Neil.",
     "highlights": [
       "Cellular Jail",
       "Ross Island",

@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { VisitorCounter } from "@/components/visitor-counter";
 import type { SiteSettings } from "@/lib/types";
+import { httpsUrl } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -184,7 +186,19 @@ export function Navbar({ phone }: { phone?: string }) {
   );
 }
 
-export function Footer({ settings }: { settings: SiteSettings }) {
+const socialLinks = (settings: SiteSettings) =>
+  [
+    ["Facebook", settings.social.facebook],
+    ["Instagram", settings.social.instagram],
+    ["LinkedIn", settings.social.linkedin],
+    ["Twitter", settings.social.twitter],
+    ["TripAdvisor", settings.social.tripadvisor],
+    ["Touristlink", settings.social.touristlink],
+    ["Miami Herald", settings.social.miamiHerald],
+    ["Tour Travel World", settings.social.miniWeb],
+  ] as const;
+
+export function Footer({ settings, visitors }: { settings: SiteSettings; visitors: number }) {
   return (
     <footer className="bg-ink text-white">
       <div className="wrap grid gap-12 py-16 md:grid-cols-4">
@@ -194,13 +208,18 @@ export function Footer({ settings }: { settings: SiteSettings }) {
             Incoming tours from Green Park, New Delhi, since {settings.established}.
           </p>
           <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-white/70">
-            <a href={settings.social.facebook} target="_blank" rel="noreferrer">Facebook</a>
-            <a href={settings.social.tripadvisor} target="_blank" rel="noreferrer">TripAdvisor</a>
-            <a href={settings.social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href={settings.social.twitter} target="_blank" rel="noreferrer">Twitter</a>
-            <a href={settings.social.instagram} target="_blank" rel="noreferrer">Instagram</a>
-            <a href={settings.social.touristlink} target="_blank" rel="noreferrer">Touristlink</a>
+            {socialLinks(settings).map(([label, href]) => (
+              <a key={label} href={httpsUrl(href)} target="_blank" rel="noreferrer">{label}</a>
+            ))}
           </div>
+          <a
+            href={httpsUrl(settings.paypal)}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex rounded-full bg-[#ffc439] px-4 py-2 text-sm font-medium text-[#003087]"
+          >
+            Pay with PayPal
+          </a>
           <NewsletterForm />
         </div>
         <div>
@@ -247,8 +266,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="wrap flex flex-col gap-2 py-5 text-xs text-white/45 sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} C More Travel & Tours. GST {settings.gst}</p>
+        <div className="wrap flex flex-col gap-2 py-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} C More Travel & Tours. GST {settings.gst} · PAN {settings.pan}</p>
+          <p className="text-white/70"><VisitorCounter initial={visitors} /></p>
           <p>Incoming tour organisers. Delhi courts for disputes.</p>
         </div>
       </div>

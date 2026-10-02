@@ -16,6 +16,16 @@ export async function POST(request: Request) {
   return jsonOk(next, 201);
 }
 
+export async function PUT(request: Request) {
+  const body = (await request.json()) as GalleryImage;
+  const items = await getGallery();
+  const index = items.findIndex((item) => item.id === body.id);
+  if (index < 0) return jsonError("Photo not found.", 404);
+  items[index] = body;
+  await saveGallery(items);
+  return jsonOk(body);
+}
+
 export async function DELETE(request: Request) {
   const id = new URL(request.url).searchParams.get("id");
   const items = await getGallery();

@@ -14,7 +14,7 @@ export async function GET() {
   const items = packages
     .map((pkg) => {
       const link = `${origin}/packages/${pkg.slug}`;
-      const description = `${pkg.duration}. ${pkg.locations.join(", ")}. From ${pkg.priceDisplay} per person.`;
+      const description = `${pkg.duration}. ${pkg.locations.join(", ")}. Fare confirmed by the office.`;
       return `<item><title>${escapeXml(pkg.name)}</title><link>${link}</link><guid>${link}</guid><description>${escapeXml(description)}</description></item>`;
     })
     .join("");

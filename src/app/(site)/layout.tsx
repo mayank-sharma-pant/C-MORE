@@ -2,11 +2,12 @@ import { Footer, Navbar, WhatsApp } from "@/components/chrome";
 import { SiteMotion } from "@/components/site-motion";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { getSettings } from "@/lib/content";
+import { getVisitorCount } from "@/lib/visitors";
 
 export const dynamic = "force-dynamic";
 
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
-  const settings = await getSettings();
+  const [settings, visitors] = await Promise.all([getSettings(), getVisitorCount()]);
   return (
     <>
       <SmoothScroll />
@@ -17,7 +18,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       <main id="content">
         <SiteMotion>{children}</SiteMotion>
       </main>
-      <Footer settings={settings} />
+      <Footer settings={settings} visitors={visitors} />
       <WhatsApp number={settings.whatsapp} />
     </>
   );

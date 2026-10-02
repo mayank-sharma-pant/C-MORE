@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "catalog.wlimg.com" },
+      { protocol: "https", hostname: "ttw.wlimg.com" },
+      { protocol: "https", hostname: "dynamic.tourtravelworld.com" },
+      { protocol: "https", hostname: "static.tourtravelworld.com" },
     ],
   },
   async redirects() {

@@ -13,7 +13,7 @@ export default async function GalleryPage() {
         eyebrow="Gallery"
         title="The country, in better light."
         lede="Places that appear on the programmes. The office can replace any of these from the admin desk."
-        image="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1800&q=80"
+        image="https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/353657.jpg"
       />
       <section className="section">
         <div className="wrap columns-1 gap-4 sm:columns-2 lg:columns-3">

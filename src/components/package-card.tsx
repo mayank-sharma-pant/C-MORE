@@ -21,12 +21,8 @@ export function PackageCard({ pkg }: { pkg: TourPackage }) {
         <span className="card-cta absolute right-4 bottom-4 grid h-12 w-12 place-items-center rounded-full bg-saffron text-white">
           <ArrowUpRight size={18} />
         </span>
-        <p className="absolute bottom-4 left-4 font-display text-2xl text-white">
-          <span className="text-sm text-white/70">from </span>
-          {pkg.compareAtDisplay && (
-            <span className="mr-2 text-base text-white/60 line-through">{pkg.compareAtDisplay}</span>
-          )}
-          {pkg.priceDisplay}
+        <p className="absolute bottom-4 left-4 max-w-[70%] font-display text-2xl leading-tight text-white">
+          {pkg.locations[0]}
         </p>
       </div>
       <h3 className="mt-5 text-[1.35rem] leading-snug">

@@ -25,7 +25,7 @@ export function CurrencyTool() {
 
   return (
     <div className="rounded-[1.6rem] bg-white p-6">
-      <p className="text-sm text-muted">Indicative rates only. Your tour price is the one confirmed by the office.</p>
+      <p className="text-sm text-muted">Indicative rates only. The office confirms the fare in writing.</p>
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         <label className="text-sm">
           Amount

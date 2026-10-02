@@ -1,9 +1,10 @@
 import { PackageEditor } from "@/components/admin/package-editor";
+import { DeskHeader } from "@/components/admin/shell";
 
 export default function NewPackagePage() {
   return (
     <div>
-      <h1 className="mb-8 font-display text-3xl">New package</h1>
+      <DeskHeader title="New package" lede="It appears on the public packages page as soon as you save it." />
       <PackageEditor mode="create" />
     </div>
   );

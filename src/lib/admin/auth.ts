@@ -1,8 +1,10 @@
 import { cookies } from "next/headers";
 import { COOKIE_NAME, SESSION_DAYS, createSessionToken } from "@/lib/admin/token";
 
-export function verifyAdminPassword(password: string) {
-  return password === (process.env.ADMIN_PASSWORD || "cmore1991");
+export function verifyAdminLogin(username: string, password: string) {
+  const expectedUser = (process.env.ADMIN_USER || "cmore").trim().toLowerCase();
+  const expectedPassword = process.env.ADMIN_PASSWORD || "cmore1991";
+  return username.trim().toLowerCase() === expectedUser && password === expectedPassword;
 }
 
 export async function setAdminSession() {

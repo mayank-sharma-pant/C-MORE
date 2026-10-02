@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-export function DeleteButton({ href }: { href: string }) {
+export function DeleteButton({ href, label = "Remove" }: { href: string; label?: string }) {
   const router = useRouter();
 
   async function remove() {
@@ -13,7 +13,7 @@ export function DeleteButton({ href }: { href: string }) {
 
   return (
     <button type="button" onClick={remove} className="text-saffron">
-      Remove
+      {label}
     </button>
   );
 }

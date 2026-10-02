@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { getSettings } from "@/lib/content";
+import { httpsUrl } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Global awards" };
 
@@ -16,7 +17,17 @@ export default async function AwardsPage() {
       />
       <section className="section">
         <div className="wrap grid gap-6 md:grid-cols-3">
-          <a href={settings.awardUrl} target="_blank" rel="noreferrer" className="rounded-[1.5rem] bg-white p-6 transition hover:-translate-y-1">
+          <a href={httpsUrl(settings.social.miamiHerald)} target="_blank" rel="noreferrer" className="rounded-[1.5rem] bg-white p-6 transition hover:-translate-y-1">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-saffron">On media</p>
+            <h2 className="mt-3 text-3xl">Miami Herald</h2>
+            <p className="mt-3 text-muted">The Miami Beach story that names the office.</p>
+          </a>
+          <a href={httpsUrl(settings.social.miniWeb)} target="_blank" rel="noreferrer" className="rounded-[1.5rem] bg-white p-6 transition hover:-translate-y-1">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-saffron">Mini web</p>
+            <h2 className="mt-3 text-3xl">Tour Travel World</h2>
+            <p className="mt-3 text-muted">The listing published for the New Delhi office.</p>
+          </a>
+          <a href={httpsUrl(settings.awardUrl)} target="_blank" rel="noreferrer" className="rounded-[1.5rem] bg-white p-6 transition hover:-translate-y-1">
             <p className="text-[11px] uppercase tracking-[0.2em] text-saffron">Verification</p>
             <h2 className="mt-3 text-3xl">International Trade Council</h2>
             <p className="mt-3 text-muted">Open the record linked from the existing website.</p>

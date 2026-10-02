@@ -84,6 +84,7 @@ export interface SiteSettings {
   whatsapp: string;
   address: string[];
   gst: string;
+  pan: string;
   ceo: string;
   established: string;
   ownership: string;
@@ -95,7 +96,10 @@ export interface SiteSettings {
     twitter: string;
     tripadvisor: string;
     touristlink: string;
+    miamiHerald: string;
+    miniWeb: string;
   };
+  paypal: string;
   brochurePdf: string;
   awardUrl: string;
 }

@@ -1,10 +1,11 @@
 import { DestinationManager } from "@/components/admin/managers";
+import { DeskHeader } from "@/components/admin/shell";
 import { getDestinations } from "@/lib/content";
 
 export default async function Page() {
   return (
     <div>
-      <h1 className="mb-8 font-display text-3xl">Destinations</h1>
+      <DeskHeader title="Destinations" lede="Places listed on the public destinations page." />
       <DestinationManager items={await getDestinations()} />
     </div>
   );

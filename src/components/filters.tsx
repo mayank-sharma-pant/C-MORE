@@ -5,17 +5,6 @@ import { PackageCard } from "@/components/package-card";
 import { activities, themes } from "@/lib/taxonomy";
 import type { TourPackage } from "@/lib/types";
 
-const budgets = [
-  { id: "all", label: "Any budget" },
-  { id: "1500", label: "Below 1,500", min: 0, max: 1500 },
-  { id: "3000", label: "1,501 to 3,000", min: 1501, max: 3000 },
-  { id: "5000", label: "3,001 to 5,000", min: 3001, max: 5000 },
-  { id: "10000", label: "5,001 to 10,000", min: 5001, max: 10000 },
-  { id: "15000", label: "10,001 to 15,000", min: 10001, max: 15000 },
-  { id: "25000", label: "15,001 to 25,000", min: 15001, max: 25000 },
-  { id: "above", label: "Above 25,000", min: 25001, max: Number.POSITIVE_INFINITY },
-] as const;
-
 const nightOptions = [
   { id: "all", label: "Any length" },
   { id: "1", label: "1 Night & 2 Days" },
@@ -42,32 +31,26 @@ export function PackageExplorer({
   initialActivity?: string;
 }) {
   const [query, setQuery] = useState("");
-  const [budget, setBudget] = useState("all");
   const [nights, setNights] = useState("all");
   const [theme, setTheme] = useState(initialTheme);
   const [activity, setActivity] = useState(initialActivity);
   const [sort, setSort] = useState("featured");
 
   const visible = useMemo(() => {
-    const band = budgets.find((item) => item.id === budget);
     const needle = query.trim().toLowerCase();
     const list = packages.filter((pkg) => {
       const themeOk = theme === "all" || pkg.themes.includes(theme);
       const activityOk = activity === "all" || pkg.activities.includes(activity);
       const haystack = `${pkg.name} ${pkg.locations.join(" ")} ${pkg.summary}`.toLowerCase();
       const queryOk = !needle || haystack.includes(needle);
-      const priceOk = !band || !("min" in band) || (pkg.price >= band.min && pkg.price <= band.max);
       const stay = nightsOf(pkg.duration);
       const nightsOk = nights === "all" || (nights === "99" ? stay > 7 : stay === Number(nights));
-      return themeOk && activityOk && queryOk && priceOk && nightsOk;
+      return themeOk && activityOk && queryOk && nightsOk;
     });
-    const value = (pkg: TourPackage) =>
-      pkg.currency === "INR" ? pkg.price / 83 : pkg.price;
-    if (sort === "price-asc") list.sort((a, b) => value(a) - value(b));
-    if (sort === "price-desc") list.sort((a, b) => value(b) - value(a));
     if (sort === "name") list.sort((a, b) => a.name.localeCompare(b.name));
+    if (sort === "duration") list.sort((a, b) => nightsOf(a.duration) - nightsOf(b.duration));
     return list;
-  }, [packages, query, budget, nights, theme, activity, sort]);
+  }, [packages, query, nights, theme, activity, sort]);
 
   const select =
     "rounded-full border border-line bg-white px-4 py-2 text-sm text-ink";
@@ -82,11 +65,6 @@ export function PackageExplorer({
           aria-label="Where do you want to go?"
           className="min-w-[16rem] flex-1 rounded-full border border-line bg-white px-4 py-2 text-sm text-ink"
         />
-        <select className={select} value={budget} onChange={(event) => setBudget(event.target.value)} aria-label="Budget">
-          {budgets.map((item) => (
-            <option key={item.id} value={item.id}>{item.label}</option>
-          ))}
-        </select>
         <select className={select} value={nights} onChange={(event) => setNights(event.target.value)} aria-label="Number of nights">
           {nightOptions.map((item) => (
             <option key={item.id} value={item.id}>{item.label}</option>
@@ -106,8 +84,7 @@ export function PackageExplorer({
         </select>
         <select className={select} value={sort} onChange={(event) => setSort(event.target.value)} aria-label="Sort">
           <option value="featured">Featured first</option>
-          <option value="price-asc">Price, low to high</option>
-          <option value="price-desc">Price, high to low</option>
+          <option value="duration">Shortest first</option>
           <option value="name">Name</option>
         </select>
       </div>

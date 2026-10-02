@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { InquiryForm } from "@/components/inquiry-form";
 import { PageHero } from "@/components/page-hero";
 import { getSettings } from "@/lib/content";
+import { httpsUrl } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Contact" };
 
@@ -13,7 +14,7 @@ export default async function ContactPage() {
         eyebrow="Contact"
         title="Green Park, New Delhi."
         lede="Call, write, or send the form. Mr Kamal Brahma is the person the office names on the contact page."
-        image="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1800&q=80"
+        image="https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/319767.jpg"
       />
       <section className="section">
         <div className="wrap grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
@@ -25,6 +26,11 @@ export default async function ContactPage() {
             <p><a className="text-saffron" href={`mailto:${settings.email}`}>{settings.email}</a></p>
             <p><a href={`mailto:${settings.altEmail}`}>{settings.altEmail}</a></p>
             <p className="text-sm text-muted">{settings.hours}</p>
+            <p className="text-sm text-muted">GST {settings.gst}</p>
+            <p className="text-sm text-muted">PAN {settings.pan}</p>
+            <a href={httpsUrl(settings.paypal)} target="_blank" rel="noreferrer" className="inline-flex rounded-full bg-[#ffc439] px-4 py-2 text-sm font-medium text-[#003087]">
+              Pay with PayPal
+            </a>
           </div>
           <InquiryForm />
         </div>

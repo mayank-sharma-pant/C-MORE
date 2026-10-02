@@ -1,74 +1,134 @@
 [
   {
-    "id": "g1",
-    "src": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1600&q=80",
-    "alt": "The Taj Mahal reflected in the water at Agra",
-    "place": "Agra"
-  },
-  {
-    "id": "g2",
-    "src": "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1600&q=80",
-    "alt": "Hawa Mahal, the Palace of Winds in Jaipur",
-    "place": "Jaipur"
-  },
-  {
-    "id": "g3",
-    "src": "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1600&q=80",
-    "alt": "Amber Fort above Jaipur",
-    "place": "Jaipur"
-  },
-  {
-    "id": "g4",
-    "src": "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1600&q=80",
-    "alt": "India Gate in New Delhi",
+    "id": "golden-triangle",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/319767.jpg",
+    "alt": "The Golden Triangle - North India Tour",
     "place": "New Delhi"
   },
   {
-    "id": "g5",
-    "src": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1600&q=80",
-    "alt": "Morning on the ghats of Varanasi",
-    "place": "Varanasi"
+    "id": "pushkar-fair",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/171515.jpg",
+    "alt": "Pushkar Fair Tour",
+    "place": "New Delhi"
   },
   {
-    "id": "g6",
-    "src": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80",
-    "alt": "A houseboat on the Kerala backwaters",
-    "place": "Kerala"
+    "id": "splendors-of-rajasthan",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/217247.jpg",
+    "alt": "Splendors of Rajasthan Tour",
+    "place": "New Delhi"
   },
   {
-    "id": "g7",
-    "src": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=1600&q=80",
-    "alt": "Sandstone fort at Jaisalmer",
-    "place": "Jaisalmer"
+    "id": "kerala-coconut",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/185609.jpg",
+    "alt": "Kerala Coconut Holidays Tour",
+    "place": "Kumarakom"
   },
   {
-    "id": "g8",
-    "src": "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=1600&q=80",
-    "alt": "Blue houses of Jodhpur",
-    "place": "Jodhpur"
+    "id": "footsteps-of-buddha",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/248784.jpg",
+    "alt": "Footsteps of Buddha Tour",
+    "place": "New Delhi"
   },
   {
-    "id": "g9",
-    "src": "https://images.unsplash.com/photo-1617516202907-ff75846e6667?auto=format&fit=crop&w=1600&q=80",
-    "alt": "Lake palace at Udaipur",
-    "place": "Udaipur"
+    "id": "taj-temple-ganges",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/220799.jpg",
+    "alt": "Taj, Temple & Ganges Tour",
+    "place": "New Delhi"
   },
   {
-    "id": "g10",
-    "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80",
-    "alt": "Camels in the Rajasthan desert",
-    "place": "Pushkar"
+    "id": "ladakh-hemis",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/133163.jpg",
+    "alt": "Ladakh - Hemis Festival Package",
+    "place": "New Delhi"
   },
   {
-    "id": "g11",
-    "src": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1600&q=80",
-    "alt": "A monastery in the Ladakh landscape",
-    "place": "Ladakh"
+    "id": "camel-safari",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/204061.jpg",
+    "alt": "Camel Safari in Rajasthan Tour",
+    "place": "New Delhi"
   },
   {
-    "id": "g12",
-    "src": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1600&q=80",
-    "alt": "A tiger in dry forest",
+    "id": "ranthambore-luxury-break",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/437173.jpg",
+    "alt": "Luxury Breaks \u2014 Ranthambore",
     "place": "Ranthambore"
+  },
+  {
+    "id": "golden-triangle-long-weekend",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/238395.jpg",
+    "alt": "Long Weekend \u2014 the Golden Triangle",
+    "place": "New Delhi"
+  },
+  {
+    "id": "agra-fatehpur-weekend",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/238421.jpg",
+    "alt": "Weekend Breaks \u2014 Agra & Fatehpur Sikri",
+    "place": "Agra"
+  },
+  {
+    "id": "ayurveda-holidays",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/176022.jpg",
+    "alt": "Ayurveda Holidays Tour",
+    "place": "Alleppey"
+  },
+  {
+    "id": "north-west-india-nepal",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/267922.jpg",
+    "alt": "Best of North & West India with Nepal",
+    "place": "New Delhi"
+  },
+  {
+    "id": "valley-of-flowers",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/224983.jpg",
+    "alt": "Himalayan Trails \u2014 Valley of Flowers",
+    "place": "Haridwar"
+  },
+  {
+    "id": "golden-triangle-east",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/224505.jpg",
+    "alt": "Golden Triangle \u2014 East India",
+    "place": "Kolkata"
+  },
+  {
+    "id": "kashmir-switzerland",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/248760.jpg",
+    "alt": "Kashmir - Switzerland of the East Tour",
+    "place": "Srinagar"
+  },
+  {
+    "id": "rajasthan-kings-queens",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/353657.jpg",
+    "alt": "Rajasthan - Land of Kings & Queens Tour",
+    "place": "New Delhi"
+  },
+  {
+    "id": "adventure-wildlife",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/224378.jpg",
+    "alt": "Adventure India - Wildlife Escapades",
+    "place": "New Delhi"
+  },
+  {
+    "id": "sun-sand-caves",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/238437.jpg",
+    "alt": "Sun Sand & Cave Temples Tour",
+    "place": "Mumbai"
+  },
+  {
+    "id": "rajasthan-shekhawati",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/223706.jpg",
+    "alt": "Rajasthan - Shekhawati Region Tour",
+    "place": "New Delhi"
+  },
+  {
+    "id": "kerala-luxury-cruise",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/238430.jpg",
+    "alt": "Luxury Cruise in Kerala \u2013 God\u2019s Own Country Tour",
+    "place": "Kochi"
+  },
+  {
+    "id": "andaman-nicobar",
+    "src": "https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/131712.jpg",
+    "alt": "The Mysterious Islands of Andaman and Nicobar Tour",
+    "place": "Port Blair"
   }
 ]

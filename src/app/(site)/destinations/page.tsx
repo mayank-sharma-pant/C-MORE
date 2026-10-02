@@ -14,7 +14,7 @@ export default async function DestinationsPage() {
         eyebrow="Destinations"
         title="The places on the programmes."
         lede="Delhi is where every inbound journey is met. The rest of the map is Rajasthan, the rivers, the hills, and the Buddhist sites."
-        image="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1800&q=80"
+        image="https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/217247.jpg"
       />
       <section className="section">
         <div className="wrap grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

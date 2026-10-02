@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Terms" };
 const blocks = [
   {
     title: "When a booking is firm",
-    body: "A reservation is not firm until the deposit reaches the company’s bankers. By sending it, you agree to these terms. One published note asks for a reservation deposit of USD 250 per person. That amount is not refunded if you cancel, but it may be applied to another trip taken within 18 months. It is not transferable to another person.",
+    body: "A reservation is not firm until the deposit reaches the company’s bankers. By sending it, you agree to these terms. The deposit amount is confirmed in writing by the office. It is not refunded if you cancel, but it may be applied to another trip taken within 18 months. It is not transferable to another person.",
   },
   {
     title: "How the balance is paid",

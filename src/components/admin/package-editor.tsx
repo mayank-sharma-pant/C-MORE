@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { ImageField } from "@/components/admin/image-field";
 import { fieldClass } from "@/components/admin/shell";
 import { activities, themes } from "@/lib/taxonomy";
 import type { ItineraryDay, TourPackage } from "@/lib/types";
@@ -109,7 +110,7 @@ export function PackageEditor({ initial, mode }: { initial?: TourPackage; mode: 
       <label className="text-sm">Name<input className={fieldClass} required value={pkg.name} onChange={(event) => setPkg({ ...pkg, name: event.target.value })} /></label>
       <div className="grid gap-5 sm:grid-cols-3">
         <label className="text-sm">Duration<input className={fieldClass} value={pkg.duration} onChange={(event) => setPkg({ ...pkg, duration: event.target.value })} /></label>
-        <label className="text-sm">Price<input className={fieldClass} type="number" value={pkg.price} onChange={(event) => setPkg({ ...pkg, price: Number(event.target.value) })} /></label>
+        <label className="text-sm">Desk fare, not published<input className={fieldClass} type="number" value={pkg.price} onChange={(event) => setPkg({ ...pkg, price: Number(event.target.value) })} /></label>
         <label className="text-sm">Currency
           <select className={fieldClass} value={pkg.currency} onChange={(event) => setPkg({ ...pkg, currency: event.target.value as TourPackage["currency"] })}>
             <option>USD</option>
@@ -117,7 +118,7 @@ export function PackageEditor({ initial, mode }: { initial?: TourPackage; mode: 
           </select>
         </label>
       </div>
-      <label className="text-sm">Image address<input className={fieldClass} value={pkg.image} onChange={(event) => setPkg({ ...pkg, image: event.target.value })} /></label>
+      <ImageField label="Cover picture" value={pkg.image} onChange={(image) => setPkg({ ...pkg, image })} required />
       <label className="text-sm">Places, separated by commas<input className={fieldClass} value={locations} onChange={(event) => setLocations(event.target.value)} /></label>
       <label className="text-sm">Short summary<textarea className={fieldClass} rows={3} value={pkg.summary} onChange={(event) => setPkg({ ...pkg, summary: event.target.value })} /></label>
       <label className="text-sm">Overview<textarea className={fieldClass} rows={5} value={pkg.overview} onChange={(event) => setPkg({ ...pkg, overview: event.target.value })} /></label>

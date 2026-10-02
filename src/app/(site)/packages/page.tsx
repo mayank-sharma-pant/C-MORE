@@ -12,8 +12,8 @@ export default async function PackagesPage() {
       <PageHero
         eyebrow="Tour packages"
         title="Published programmes, ready to adjust."
-        lede="Prices are per person, starting from the figure on the card. Hotels and the exact days are confirmed before any deposit."
-        image="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=80"
+        lede="The day-by-day programmes published by the office. Hotels and the fare are confirmed in writing before any deposit."
+        image="https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/319767.jpg"
       />
       <section className="section">
         <div className="wrap">

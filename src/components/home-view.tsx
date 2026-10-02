@@ -505,7 +505,6 @@ function DestinationIndex({ destinations }: { destinations: Destination[] }) {
 function Voices({ testimonials }: { testimonials: Testimonial[] }) {
   const reduce = useReducedMotion();
   const [index, setIndex] = useState(0);
-  const item = testimonials[index];
 
   useEffect(() => {
     if (reduce || testimonials.length < 2) return;
@@ -513,11 +512,11 @@ function Voices({ testimonials }: { testimonials: Testimonial[] }) {
     return () => window.clearTimeout(timer);
   }, [index, reduce, testimonials.length]);
 
-  if (!item) return null;
+  if (testimonials.length === 0) return null;
 
   return (
     <section className="bg-garden py-14 text-white md:py-20">
-      <div className="wrap grid gap-10 lg:grid-cols-[14rem_1fr]">
+      <div className="wrap grid items-start gap-10 lg:grid-cols-[14rem_1fr] lg:items-stretch">
         <div className="flex flex-col justify-between gap-8">
           <p className="eyebrow text-white/60">From people who came</p>
           <div className="flex items-center gap-4">
@@ -535,21 +534,24 @@ function Voices({ testimonials }: { testimonials: Testimonial[] }) {
             <Link href="/testimonials" className="link-line text-sm text-white/80">All notes</Link>
           </div>
         </div>
-        <div>
-          <AnimatePresence mode="wait">
-            <motion.blockquote
-              key={item.id}
-              initial={reduce ? false : { opacity: 0, y: 24, filter: "blur(6px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -16, filter: "blur(4px)" }}
-              transition={{ duration: 0.7, ease }}
-            >
-              <p className="font-display text-2xl leading-[1.3] md:text-[2.3rem]">“{item.quote}”</p>
-              <footer className="mt-8 text-sm text-white/65">
-                {item.name} · {item.detail}
-              </footer>
-            </motion.blockquote>
-          </AnimatePresence>
+        <div className="grid">
+          {testimonials.map((entry, dot) => {
+            const active = dot === index;
+            return (
+              <blockquote
+                key={entry.id}
+                className={`col-start-1 row-start-1 transition-opacity duration-500 ${
+                  active ? "z-10 opacity-100" : "pointer-events-none opacity-0"
+                } ${reduce ? "transition-none" : ""}`}
+                aria-hidden={!active}
+              >
+                <p className="line-clamp-6 h-[7.8em] font-display text-2xl leading-[1.3] md:text-[2.3rem]">“{entry.quote}”</p>
+                <footer className="mt-8 text-sm text-white/65">
+                  {entry.name} · {entry.detail}
+                </footer>
+              </blockquote>
+            );
+          })}
         </div>
       </div>
     </section>

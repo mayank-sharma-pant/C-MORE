@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { PackageEditor } from "@/components/admin/package-editor";
+import { DeskHeader } from "@/components/admin/shell";
 import { getPackage } from "@/lib/content";
 
 export default async function EditPackagePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -8,7 +9,7 @@ export default async function EditPackagePage({ params }: { params: Promise<{ sl
   if (!pkg) notFound();
   return (
     <div>
-      <h1 className="mb-8 font-display text-3xl">Edit package</h1>
+      <DeskHeader title={pkg.name} lede="Changes show on the public package page after you save." />
       <PackageEditor mode="edit" initial={pkg} />
     </div>
   );

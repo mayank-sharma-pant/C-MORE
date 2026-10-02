@@ -1,11 +1,13 @@
 import { InquiryList } from "@/components/admin/managers";
+import { DeskHeader } from "@/components/admin/shell";
 import { getInquiries } from "@/lib/content";
 
 export default async function Page() {
+  const items = await getInquiries();
   return (
     <div>
-      <h1 className="mb-8 font-display text-3xl">Enquiries</h1>
-      <InquiryList items={await getInquiries()} />
+      <DeskHeader title="Enquiries" lede={`${items.length} ${items.length === 1 ? "note" : "notes"} from the public forms.`} />
+      <InquiryList items={items} />
     </div>
   );
 }

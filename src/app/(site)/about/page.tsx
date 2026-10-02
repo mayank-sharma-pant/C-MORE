@@ -21,7 +21,7 @@ export default async function AboutPage() {
         eyebrow="About the office"
         title="We work only as incoming organisers."
         lede="Because we are Indians, and we know the country. Personal care, professionalism, timing, and the best return for the money."
-        image="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1800&q=80"
+        image="https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/319767.jpg"
       />
       <section className="section">
         <div className="wrap grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">

@@ -10,8 +10,8 @@ export default function CurrencyPage() {
       <PageHero
         eyebrow="Currency"
         title="A rough exchange, before the quote."
-        lede="Most published programmes are in US dollars. A few, including Footsteps of Buddha, are listed in rupees."
-        image="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=80"
+        lede="Convert an amount before you write to the office. Tour fares are confirmed in writing and are not listed on this site."
+        image="https://ttw.wlimg.com/package-images/photo-big/dir_14/401707/238421.jpg"
       />
       <section className="section">
         <div className="wrap max-w-3xl">

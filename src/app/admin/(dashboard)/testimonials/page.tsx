@@ -1,10 +1,11 @@
 import { TestimonialManager } from "@/components/admin/managers";
+import { DeskHeader } from "@/components/admin/shell";
 import { getTestimonials } from "@/lib/content";
 
 export default async function Page() {
   return (
     <div>
-      <h1 className="mb-8 font-display text-3xl">Testimonials</h1>
+      <DeskHeader title="Testimonials" lede="Short notes from travellers, shown on the testimonials page." />
       <TestimonialManager items={await getTestimonials()} />
     </div>
   );
