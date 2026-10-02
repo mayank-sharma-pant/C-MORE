@@ -29,7 +29,10 @@ export default async function PackagePage({ params }: Props) {
         <Image src={pkg.image} alt="" fill priority className="object-cover opacity-60" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20" />
         <div className="wrap relative flex min-h-[52vh] flex-col justify-end py-12 pt-28">
-          <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">{pkg.duration}</p>
+          <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
+            {pkg.code ? `Tour code ${pkg.code} · ` : ""}
+            {pkg.duration}
+          </p>
           <h1 className="mt-3 max-w-4xl text-3xl leading-tight md:text-4xl">{pkg.name}</h1>
           <p className="mt-4 text-white/75">{pkg.locations.join(" · ")}</p>
           <p className="mt-5 text-sm uppercase tracking-[0.18em] text-white/70">Fare confirmed by the office</p>
@@ -39,6 +42,18 @@ export default async function PackagePage({ params }: Props) {
         <div className="wrap grid gap-14 lg:grid-cols-[1.4fr_0.6fr]">
           <div>
             <p className="max-w-3xl text-lg text-muted">{pkg.overview}</p>
+            {(pkg.photos || []).length > 0 && (
+              <div className="mt-10">
+                <h2 className="text-2xl">Pictures from this route</h2>
+                <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {pkg.photos!.map((src) => (
+                    <li key={src} className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
+                      <Image src={src} alt="" fill className="object-cover" sizes="(min-width: 1024px) 18vw, 45vw" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <h2 className="mt-12 text-2xl">Day by day</h2>
             <div className="mt-6">
               <Itinerary days={pkg.itinerary} />

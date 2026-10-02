@@ -34,6 +34,12 @@ export default async function SitemapPage() {
         ["/services", "Our services"],
         ["/services/tour-operators", "Tour operators"],
         ["/services/mice", "MICE services"],
+        ["/services/inbound", "Inbound tours"],
+        ["/services/outbound", "Outbound tours"],
+        ["/services/heritage-cultural", "Heritage & cultural tours"],
+        ["/services/beach-island", "Beach & island tours"],
+        ["/services/pilgrimage", "Pilgrimage tours"],
+        ["/services/ayurveda-wellness", "Ayurveda & wellness"],
       ],
     },
     {

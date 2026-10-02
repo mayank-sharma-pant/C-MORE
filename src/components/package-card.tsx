@@ -29,6 +29,7 @@ export function PackageCard({ pkg }: { pkg: TourPackage }) {
         <span className="underline-grow">{pkg.name}</span>
       </h3>
       <p className="mt-1.5 text-sm text-muted">{pkg.locations.slice(0, 4).join(" · ")}</p>
+      {pkg.code ? <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted">Tour code {pkg.code}</p> : null}
     </Link>
   );
 }

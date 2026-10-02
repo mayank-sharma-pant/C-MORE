@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
-import { getSettings, getTestimonials } from "@/lib/content";
+import { ReviewForm } from "@/components/review-form";
+import { getPublishedTestimonials, getSettings } from "@/lib/content";
 import { httpsUrl } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Testimonials" };
 
 export default async function TestimonialsPage() {
-  const [items, settings] = await Promise.all([getTestimonials(), getSettings()]);
+  const [items, settings] = await Promise.all([getPublishedTestimonials(), getSettings()]);
   return (
     <>
       <PageHero
@@ -25,6 +26,9 @@ export default async function TestimonialsPage() {
             <p className="text-[11px] uppercase tracking-[0.2em] text-saffron">On media</p>
             <p className="mt-3 font-display text-2xl">Miami Herald, USA</p>
           </a>
+        </div>
+        <div className="wrap mb-12 max-w-3xl">
+          <ReviewForm />
         </div>
         <div className="wrap grid gap-6">
           {items.map((item) => (

@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   const body = (await request.json()) as Testimonial;
   if (!body.quote?.trim()) return jsonError("The note needs the words they sent.");
   const items = await getTestimonials();
-  const next = { ...body, id: body.id || crypto.randomUUID() };
+  const next = { ...body, id: body.id || crypto.randomUUID(), status: body.status === "pending" ? "pending" as const : "published" as const };
   items.unshift(next);
   await saveTestimonials(items);
   return jsonOk(next, 201);

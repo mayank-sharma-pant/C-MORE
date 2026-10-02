@@ -31,6 +31,13 @@ export default async function ContactPage() {
             <a href={httpsUrl(settings.paypal)} target="_blank" rel="noreferrer" className="inline-flex rounded-full bg-[#ffc439] px-4 py-2 text-sm font-medium text-[#003087]">
               Pay with PayPal
             </a>
+            <iframe
+              title="Map of C More Travel and Tours, Green Park Extension, New Delhi"
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(settings.address.join(", "))}&z=16&output=embed`}
+              className="mt-4 h-72 w-full rounded-[1.4rem] border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
           <InquiryForm />
         </div>

@@ -71,6 +71,12 @@ const nextConfig: NextConfig = {
       { source: "/tour-packages/rajasthan-shekhawati-region-tour.htm", destination: "/packages/rajasthan-shekhawati", permanent: true },
       { source: "/tour-packages/luxury-cruisein-kerala-gods-own-country-tour1.htm", destination: "/packages/kerala-luxury-cruise", permanent: true },
       { source: "/tour-packages/the-mysterious-islandsof-andaman-and-nicobar-tour.htm", destination: "/packages/andaman-nicobar", permanent: true },
+      { source: "/inbound-tours.htm", destination: "/services/inbound", permanent: true },
+      { source: "/outbound-tours.htm", destination: "/services/outbound", permanent: true },
+      { source: "/heritage-cultural-tours.htm", destination: "/services/heritage-cultural", permanent: true },
+      { source: "/beach-island-tours.htm", destination: "/services/beach-island", permanent: true },
+      { source: "/pilgrimage-tours.htm", destination: "/services/pilgrimage", permanent: true },
+      { source: "/ayurveda-wellness-tours.htm", destination: "/services/ayurveda-wellness", permanent: true },
       { source: "/blog/", destination: "/blog", permanent: true },
     ];
   },

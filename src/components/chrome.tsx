@@ -24,6 +24,12 @@ const links: { href: string; label: string; exact?: boolean; children?: { href: 
       { href: "/services", label: "All services" },
       { href: "/services/tour-operators", label: "Tour operators" },
       { href: "/services/mice", label: "MICE" },
+      { href: "/services/inbound", label: "Inbound tours" },
+      { href: "/services/outbound", label: "Outbound tours" },
+      { href: "/services/heritage-cultural", label: "Heritage & cultural" },
+      { href: "/services/beach-island", label: "Beach & island" },
+      { href: "/services/pilgrimage", label: "Pilgrimage" },
+      { href: "/services/ayurveda-wellness", label: "Ayurveda & wellness" },
     ],
   },
   { href: "/destinations", label: "Destinations" },
@@ -90,7 +96,7 @@ export function Navbar({ phone }: { phone?: string }) {
                     }`}
                   />
                 </Link>
-                <div className="invisible absolute top-full left-0 z-50 min-w-[12.5rem] pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute top-full left-0 z-50 min-w-56 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100">
                   <div className="rounded-xl border border-line bg-white py-1 text-ink shadow-xl">
                     {link.children.map((child) => (
                       <Link
@@ -244,6 +250,12 @@ export function Footer({ settings, visitors }: { settings: SiteSettings; visitor
             <li><Link href="/destinations">Destinations</Link></li>
             <li><Link href="/services/tour-operators">Tour operators</Link></li>
             <li><Link href="/services/mice">MICE</Link></li>
+            <li><Link href="/services/inbound">Inbound tours</Link></li>
+            <li><Link href="/services/outbound">Outbound tours</Link></li>
+            <li><Link href="/services/heritage-cultural">Heritage & cultural</Link></li>
+            <li><Link href="/services/beach-island">Beach & island</Link></li>
+            <li><Link href="/services/pilgrimage">Pilgrimage</Link></li>
+            <li><Link href="/services/ayurveda-wellness">Ayurveda & wellness</Link></li>
             <li><Link href="/themes">Tour by theme</Link></li>
             <li><Link href="/activities">Packages by activity</Link></li>
             <li><Link href="/gallery">Gallery</Link></li>

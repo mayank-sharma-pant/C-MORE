@@ -59,6 +59,8 @@ const empty: TourPackage = {
   itinerary: [],
   included: [],
   excluded: [],
+  code: "",
+  photos: [],
 };
 
 export function PackageEditor({ initial, mode }: { initial?: TourPackage; mode: "create" | "edit" }) {
@@ -68,6 +70,7 @@ export function PackageEditor({ initial, mode }: { initial?: TourPackage; mode: 
   const [itinerary, setItinerary] = useState(toText(initial?.itinerary || []));
   const [included, setIncluded] = useState((initial?.included || []).join("\n"));
   const [excluded, setExcluded] = useState((initial?.excluded || []).join("\n"));
+  const [photos, setPhotos] = useState((initial?.photos || []).join("\n"));
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
 
@@ -88,6 +91,8 @@ export function PackageEditor({ initial, mode }: { initial?: TourPackage; mode: 
       itinerary: fromText(itinerary),
       included: lines(included),
       excluded: lines(excluded),
+      code: pkg.code?.trim() || "",
+      photos: lines(photos),
       originalSlug: initial?.slug,
     };
     const response = await fetch("/api/admin/packages", {
@@ -108,8 +113,11 @@ export function PackageEditor({ initial, mode }: { initial?: TourPackage; mode: 
   return (
     <form onSubmit={save} className="grid max-w-3xl gap-5">
       <label className="text-sm">Name<input className={fieldClass} required value={pkg.name} onChange={(event) => setPkg({ ...pkg, name: event.target.value })} /></label>
-      <div className="grid gap-5 sm:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <label className="text-sm">Tour code<input className={fieldClass} value={pkg.code || ""} onChange={(event) => setPkg({ ...pkg, code: event.target.value.toUpperCase() })} placeholder="GTNI" /></label>
         <label className="text-sm">Duration<input className={fieldClass} value={pkg.duration} onChange={(event) => setPkg({ ...pkg, duration: event.target.value })} /></label>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2">
         <label className="text-sm">Desk fare, not published<input className={fieldClass} type="number" value={pkg.price} onChange={(event) => setPkg({ ...pkg, price: Number(event.target.value) })} /></label>
         <label className="text-sm">Currency
           <select className={fieldClass} value={pkg.currency} onChange={(event) => setPkg({ ...pkg, currency: event.target.value as TourPackage["currency"] })}>
@@ -119,6 +127,10 @@ export function PackageEditor({ initial, mode }: { initial?: TourPackage; mode: 
         </label>
       </div>
       <ImageField label="Cover picture" value={pkg.image} onChange={(image) => setPkg({ ...pkg, image })} required />
+      <label className="text-sm">
+        More pictures, one address per line. These appear on the public itinerary.
+        <textarea className={fieldClass} rows={5} value={photos} onChange={(event) => setPhotos(event.target.value)} />
+      </label>
       <label className="text-sm">Places, separated by commas<input className={fieldClass} value={locations} onChange={(event) => setLocations(event.target.value)} /></label>
       <label className="text-sm">Short summary<textarea className={fieldClass} rows={3} value={pkg.summary} onChange={(event) => setPkg({ ...pkg, summary: event.target.value })} /></label>
       <label className="text-sm">Overview<textarea className={fieldClass} rows={5} value={pkg.overview} onChange={(event) => setPkg({ ...pkg, overview: event.target.value })} /></label>

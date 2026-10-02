@@ -294,6 +294,16 @@ export function TestimonialManager({ items }: { items: Testimonial[] }) {
     }
   }
 
+  async function publish(item: Testimonial) {
+    try {
+      await send("/api/admin/testimonials", "PUT", { ...item, status: "published" });
+      setError("");
+      router.refresh();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not save.");
+    }
+  }
+
   async function update(event: React.FormEvent<HTMLFormElement>, item: Testimonial) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.currentTarget).entries());
@@ -319,15 +329,22 @@ export function TestimonialManager({ items }: { items: Testimonial[] }) {
         <button className="w-fit rounded-full bg-ink px-4 py-2 text-sm text-white">Save note</button>
       </form>
       <ul className="space-y-4">
-        {items.map((item) => (
+        {[...items].sort((a, b) => Number(b.status === "pending") - Number(a.status === "pending")).map((item) => (
           <li key={item.id} className="rounded-[1.4rem] bg-card p-5">
             <p className="font-display text-2xl leading-snug">&ldquo;{item.quote}&rdquo;</p>
             <div className="mt-3 flex items-center justify-between gap-3 text-sm text-muted">
               <span>
+                {item.status === "pending" ? "Waiting · " : ""}
                 {item.name}
                 {item.detail ? ` · ${item.detail}` : ""}
+                {item.email ? ` · ${item.email}` : ""}
               </span>
               <span className="flex gap-3">
+                {item.status === "pending" && (
+                  <button type="button" className="text-ink underline" onClick={() => publish(item)}>
+                    Publish
+                  </button>
+                )}
                 <button type="button" className="text-ink underline" onClick={() => setEditing(editing === item.id ? null : item.id)}>
                   {editing === item.id ? "Close" : "Edit"}
                 </button>

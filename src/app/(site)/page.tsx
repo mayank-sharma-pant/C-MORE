@@ -1,11 +1,11 @@
 import { HomeView } from "@/components/home-view";
-import { getDestinations, getPackages, getSettings, getTestimonials } from "@/lib/content";
+import { getDestinations, getPackages, getPublishedTestimonials, getSettings } from "@/lib/content";
 
 export default async function HomePage() {
   const [packages, destinations, testimonials, settings] = await Promise.all([
     getPackages(),
     getDestinations(),
-    getTestimonials(),
+    getPublishedTestimonials(),
     getSettings(),
   ]);
 

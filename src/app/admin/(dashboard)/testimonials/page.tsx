@@ -5,7 +5,7 @@ import { getTestimonials } from "@/lib/content";
 export default async function Page() {
   return (
     <div>
-      <DeskHeader title="Testimonials" lede="Short notes from travellers, shown on the testimonials page." />
+      <DeskHeader title="Testimonials" lede="Notes sent from the public page stay hidden until you publish them." />
       <TestimonialManager items={await getTestimonials()} />
     </div>
   );

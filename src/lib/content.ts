@@ -33,6 +33,7 @@ export function refreshSite() {
   revalidatePath("/blog/[slug]", "page");
   revalidatePath("/themes/[slug]", "page");
   revalidatePath("/activities/[slug]", "page");
+  revalidatePath("/services/[slug]", "page");
 }
 
 export async function getPackages() {
@@ -81,6 +82,11 @@ export async function getTestimonials() {
     "testimonials.json",
     testimonialsSeed as Testimonial[]
   );
+}
+
+export async function getPublishedTestimonials() {
+  const items = await getTestimonials();
+  return items.filter((item) => item.status !== "pending");
 }
 
 export async function saveTestimonials(items: Testimonial[]) {

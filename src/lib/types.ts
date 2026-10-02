@@ -15,7 +15,9 @@ export interface TourPackage {
   currency: Currency;
   priceDisplay: string;
   compareAtDisplay?: string;
+  code?: string;
   image: string;
+  photos?: string[];
   locations: string[];
   themes: string[];
   activities: string[];
@@ -57,6 +59,8 @@ export interface Testimonial {
   quote: string;
   name: string;
   detail: string;
+  email?: string;
+  status?: "published" | "pending";
 }
 
 export interface Inquiry {
